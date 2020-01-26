@@ -1,0 +1,1 @@
+"Grokking Bitcoin" book from Kalle Rosenbaum - open source version.

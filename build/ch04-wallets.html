@@ -1,0 +1,2409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 1.5.5">
+<title>Wallets</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
+/* Remove comment around @import statement below when using as a custom stylesheet */
+/*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}
+audio,canvas,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+[hidden],template{display:none}
+script{display:none!important}
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+a{background:transparent}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+abbr[title]{border-bottom:1px dotted}
+b,strong{font-weight:bold}
+dfn{font-style:italic}
+hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}
+input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}
+input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto;tab-size:4;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.center{margin-left:auto;margin-right:auto}
+.spread{width:100%}
+p.lead,.paragraph.lead>p,#preamble>.sectionbody>.paragraph:first-of-type p{font-size:1.21875em;line-height:1.6}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0;direction:ltr}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:none}
+p{font-family:inherit;font-weight:400;font-size:1em;line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #ddddd8;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em;height:0}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{font-size:1em;line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol,ul.no-bullet,ol.no-bullet{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0;font-size:1em}
+ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
+ul.square{list-style-type:square}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ul.no-bullet{list-style:none}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+abbr,acronym{text-transform:uppercase;font-size:90%;color:rgba(0,0,0,.8);border-bottom:1px dotted #ddd;cursor:help}
+abbr{text-transform:none}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote cite{display:block;font-size:.9375em;color:rgba(0,0,0,.6)}
+blockquote cite:before{content:"\2014 \0020"}
+blockquote cite a,blockquote cite a:visited{color:rgba(0,0,0,.6)}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media only screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede}
+table thead,table tfoot{background:#f7f8f7;font-weight:bold}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt,table tr:nth-of-type(even){background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{display:table-cell;line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.clearfix:before,.clearfix:after,.float-group:before,.float-group:after{content:" ";display:table}
+.clearfix:after,.float-group:after{clear:both}
+*:not(pre)>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background-color:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed;word-wrap:break-word}
+*:not(pre)>code.nobreak{word-wrap:normal}
+*:not(pre)>code.nowrap{white-space:nowrap}
+pre,pre>code{line-height:1.45;color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;text-rendering:optimizeSpeed}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background-color:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menu{color:rgba(0,0,0,.8)}
+b.button:before,b.button:after{position:relative;top:-1px;font-weight:400}
+b.button:before{content:"[";padding:0 3px 0 2px}
+b.button:after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header:before,#header:after,#content:before,#content:after,#footnotes:before,#footnotes:after,#footer:before,#footer:after{content:" ";display:table}
+#header:after,#content:after,#footnotes:after,#footer:after{clear:both}
+#content{margin-top:1.25em}
+#content:before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #ddddd8}
+#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #ddddd8;padding-bottom:8px}
+#header .details{border-bottom:1px solid #ddddd8;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:-ms-flexbox;display:-webkit-flex;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span:before{content:"\00a0\2013\00a0"}
+#header .details br+span.author:before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark:before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber:after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #ddddd8;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #efefed;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media only screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+#toc.toc2{margin-top:0!important;background-color:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #efefed;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #efefed;left:auto;right:0}}
+@media only screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:100%;background-color:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:rgba(255,255,255,.8);line-height:1.44}
+.sect1{padding-bottom:.625em}
+@media only screen and (min-width:768px){.sect1{padding-bottom:1.25em}}
+.sect1+.sect1{border-top:1px solid #efefed}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor:before,h2>a.anchor:before,h3>a.anchor:before,#toctitle>a.anchor:before,.sidebarblock>.content>.title>a.anchor:before,h4>a.anchor:before,h5>a.anchor:before,h6>a.anchor:before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock>caption.title{white-space:nowrap;overflow:visible;max-width:0}
+.paragraph.lead>p,#preamble>.sectionbody>.paragraph:first-of-type p{color:rgba(0,0,0,.85)}
+table.tableblock #preamble>.sectionbody>.paragraph:first-of-type p{font-size:inherit}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #ddddd8;color:rgba(0,0,0,.6)}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border-style:solid;border-width:1px;border-color:#e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;-webkit-border-radius:4px;border-radius:4px}
+.exampleblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child{margin-bottom:0}
+.sidebarblock{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
+.sidebarblock>:first-child{margin-top:0}
+.sidebarblock>:last-child{margin-bottom:0}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock pre:not(.highlight),.listingblock pre[class="highlight"],.listingblock pre[class^="highlight "],.listingblock pre.CodeRay,.listingblock pre.prettyprint{background:#f7f7f8}
+.sidebarblock .literalblock pre,.sidebarblock .listingblock pre:not(.highlight),.sidebarblock .listingblock pre[class="highlight"],.sidebarblock .listingblock pre[class^="highlight "],.sidebarblock .listingblock pre.CodeRay,.sidebarblock .listingblock pre.prettyprint{background:#f2f1f1}
+.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{-webkit-border-radius:4px;border-radius:4px;word-wrap:break-word;padding:1em;font-size:.8125em}
+.literalblock pre.nowrap,.literalblock pre[class].nowrap,.listingblock pre.nowrap,.listingblock pre[class].nowrap{overflow-x:auto;white-space:pre;word-wrap:normal}
+@media only screen and (min-width:768px){.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{font-size:.90625em}}
+@media only screen and (min-width:1280px){.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{font-size:1em}}
+.literalblock.output pre{color:#f7f7f8;background-color:rgba(0,0,0,.9)}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;-webkit-border-radius:4px;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]:before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:#999}
+.listingblock:hover code[data-lang]:before{display:block}
+.listingblock.terminal pre .command:before{content:attr(data-prompt);padding-right:.5em;color:#999}
+.listingblock.terminal pre .command:not([data-prompt]):before{content:"$"}
+table.pyhltable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.pyhltable td{vertical-align:top;padding-top:0;padding-bottom:0;line-height:1.45}
+table.pyhltable td.code{padding-left:.75em;padding-right:0}
+pre.pygments .lineno,table.pyhltable td:not(.code){color:#999;padding-left:0;padding-right:.5em;border-right:1px solid #ddddd8}
+pre.pygments .lineno{display:inline-block;margin-right:.25em}
+table.pyhltable .linenodiv{background:none!important;padding-right:0!important}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock blockquote p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote:before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.5em;margin-right:.5ex;text-align:right}
+.quoteblock .quoteblock{margin-left:0;margin-right:0;padding:.5em 0;border-left:3px solid rgba(0,0,0,.6)}
+.quoteblock .quoteblock blockquote{padding:0 0 0 .75em}
+.quoteblock .quoteblock blockquote:before{display:none}
+.verseblock{margin:0 1em 1.25em 1em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract{margin:0 0 1.25em 0;display:block}
+.quoteblock.abstract blockquote,.quoteblock.abstract blockquote p{text-align:left;word-spacing:0}
+.quoteblock.abstract blockquote:before,.quoteblock.abstract blockquote p:first-of-type:before{display:none}
+table.tableblock{max-width:100%;border-collapse:separate}
+table.tableblock td>.paragraph:last-child p>p:last-child,table.tableblock th>p:last-child,table.tableblock td>p:last-child{margin-bottom:0}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all th.tableblock,table.grid-all td.tableblock{border-width:0 1px 1px 0}
+table.grid-all tfoot>tr>th.tableblock,table.grid-all tfoot>tr>td.tableblock{border-width:1px 1px 0 0}
+table.grid-cols th.tableblock,table.grid-cols td.tableblock{border-width:0 1px 0 0}
+table.grid-all *>tr>.tableblock:last-child,table.grid-cols *>tr>.tableblock:last-child{border-right-width:0}
+table.grid-rows th.tableblock,table.grid-rows td.tableblock{border-width:0 0 1px 0}
+table.grid-all tbody>tr:last-child>th.tableblock,table.grid-all tbody>tr:last-child>td.tableblock,table.grid-all thead:last-child>tr>th.tableblock,table.grid-rows tbody>tr:last-child>th.tableblock,table.grid-rows tbody>tr:last-child>td.tableblock,table.grid-rows thead:last-child>tr>th.tableblock{border-bottom-width:0}
+table.grid-rows tfoot>tr>th.tableblock,table.grid-rows tfoot>tr>td.tableblock{border-width:1px 0 0 0}
+table.frame-all{border-width:1px}
+table.frame-sides{border-width:0 1px}
+table.frame-topbot{border-width:1px 0}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{display:table-cell;line-height:1.6;background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+td>div.verse{white-space:pre}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.unstyled,ol.unnumbered,ul.checklist,ul.none{list-style-type:none}
+ul.unstyled,ol.unnumbered,ul.checklist{margin-left:.625em}
+ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1em;font-size:.85em}
+ul.checklist li>p:first-child>input[type="checkbox"]:first-child{width:1em;position:relative;top:1px}
+ul.inline{margin:0 auto .625em auto;margin-left:-1.375em;margin-right:0;padding:0;list-style:none;overflow:hidden}
+ul.inline>li{list-style:none;float:left;margin-left:1.375em;display:block}
+ul.inline>li>*{display:block}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist>table tr>td:first-of-type{padding:0 .75em;line-height:1}
+.colist>table tr>td:last-of-type{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:solid 4px #fff;-webkit-box-shadow:0 0 0 1px #ddd;box-shadow:0 0 0 1px #ddd}
+.imageblock.left,.imageblock[style*="float: left"]{margin:.25em .625em 1.25em 0}
+.imageblock.right,.imageblock[style*="float: right"]{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em 0;border-width:1px 0 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;text-indent:-1.05em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+.gist .file-data>table{border:0;background:#fff;width:100%;margin-bottom:0}
+.gist .file-data>table td.line-data{width:99%}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background-color:#00fafa}
+.black{color:#000}
+.black-background{background-color:#000}
+.blue{color:#0000bf}
+.blue-background{background-color:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background-color:#fa00fa}
+.gray{color:#606060}
+.gray-background{background-color:#7d7d7d}
+.green{color:#006000}
+.green-background{background-color:#007d00}
+.lime{color:#00bf00}
+.lime-background{background-color:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background-color:#7d0000}
+.navy{color:#000060}
+.navy-background{background-color:#00007d}
+.olive{color:#606000}
+.olive-background{background-color:#7d7d00}
+.purple{color:#600060}
+.purple-background{background-color:#7d007d}
+.red{color:#bf0000}
+.red-background{background-color:#fa0000}
+.silver{color:#909090}
+.silver-background{background-color:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background-color:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background-color:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background-color:#fafa00}
+span.icon>.fa{cursor:default}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note:before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip:before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning:before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution:before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important:before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background-color:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]:after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,span.alt{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background-color:#fffef7;border-color:#e0e0dc;-webkit-box-shadow:0 1px 4px #e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@media print{@page{margin:1.25cm .75cm}
+*{-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare):after,a[href^="https:"]:not(.bare):after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]:after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #ddddd8!important;padding-bottom:0!important}
+.sect1{padding-bottom:0!important}
+.sect1+.sect1{border:0!important}
+#header>h1:first-child{margin-top:1.25rem}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em 0}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span:before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]:before{display:block}
+#footer{background:none!important;padding:0 .9375em}
+#footer-text{color:rgba(0,0,0,.6)!important;font-size:.9em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+</style>
+</head>
+<body class="article">
+<div id="header">
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="ch04">Wallets</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This chapter covers</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Automating payments</p>
+</li>
+<li>
+<p>Creating and managing keys</p>
+</li>
+<li>
+<p>Making simple, secure key backups</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>So far, we’ve done nothing to improve the user experience for the
+company’s coworkers using the cookie token spreadsheet. The situation
+has become worse for users because emails to Lisa now need more
+information than in the beginning. On top of this, users should take
+extra steps to use multiple addresses to preserve their privacy.</p>
+</div>
+<div class="paragraph">
+<p>In this chapter, we’ll build a mobile app, called a <em>wallet</em>
+(<a href="#fig0401">Bitcoin wallets</a>), that handles many of the common tasks users want to
+perform. This wallet will create new addresses, store private keys,
+simplify how addresses are transferred between users, and automate the
+payment process.</p>
+</div>
+<div id="fig0401" class="imageblock">
+<div class="content">
+<img src="images/ch04/04-01.svg" alt="{big-width}">
+</div>
+<div class="title">Figure 1. Bitcoin wallets</div>
+</div>
+<div class="paragraph">
+<p>We’ll discuss different approaches to wallet backups. We’ll also look
+at a new way to generate keys, called <em>hierarchical deterministic
+wallets</em> (HD wallets), so backups become dead simple; you only need to
+back up a single random number, called a <em>seed</em>, once and
+for all. We’ll finish the chapter with an optional deep dive into the
+math behind public key derivation.</p>
+</div>
+<div class="paragraph">
+<p>This chapter won’t change anything regarding Lisa’s work or the
+spreadsheet. We focus only on users here.</p>
+</div>
+<div class="sect2">
+<h3 id="_first_wallet_version">First wallet version</h3>
+<div class="sidebarblock inbitcoin">
+<div class="content">
+<div class="title">Bitcoin wallets</div>
+<div class="paragraph">
+<p>Several different wallets are available for Bitcoin. Some popular ones are</p>
+</div>
+<div class="ulist movingtarget">
+<ul>
+<li>
+<p>Bitcoin Core</p>
+</li>
+<li>
+<p>Electrum</p>
+</li>
+<li>
+<p>GreenBits</p>
+</li>
+<li>
+<p>BRD (Bread)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>See <a href="#web-bitcoin-wallets">[web-bitcoin-wallets]</a> for a comprehensive list.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Among you and your coworkers, a group of software developers builds a
+mobile app called a <em>wallet</em> to simplify common tasks for themselves
+and other users. The group identifies the following tasks as the most
+common:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Create new addresses</dt>
+<dd>
+<p>Users must create new cookie token addresses
+every now and then. They might want to use different addresses for
+different purposes or even different addresses for all payments for
+privacy and security reasons.</p>
+</dd>
+<dt class="hdlist1">Manage private keys</dt>
+<dd>
+<p>For each address created, the wallet needs to
+store and manage the corresponding private key. Keeping private keys
+safe from intruders is a delicate task.</p>
+</dd>
+<dt class="hdlist1">Transfer payment details from payee to payer</dt>
+<dd>
+<p>When John wants to buy
+a cookie, he needs to get the cafe’s address and the payment amount into
+his app. Writing it by hand is cumbersome and error-prone, so it would
+be nice if John could scan the details with his camera instead.</p>
+</dd>
+<dt class="hdlist1">Make a payment</dt>
+<dd>
+<p>The app should be able to send an email to Lisa with
+the digitally signed payment details.</p>
+</dd>
+<dt class="hdlist1">Keep track of funds</dt>
+<dd>
+<p>Users want to know how many cookies they can
+afford. The app should display the total number of cookie tokens a user
+has.</p>
+</dd>
+<dt class="hdlist1">Back up private keys</dt>
+<dd>
+<p>When private keys are created in the app, they
+only exist in the app. If the mobile phone is lost or broken, the
+private keys are gone. You know by now what happens when you lose your
+keys, don’t you? You need a backup facility for private keys.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>The development team builds an initial version of the app and calls it
+the wallet. The term <em>wallet</em> isn’t perfect because the app doesn’t
+really contain money. It contains the keys needed to spend money. The
+actual money is stored in the spreadsheet. The app is more akin to a
+physical keyring; but the term <em>wallet</em> is widely used in the Bitcoin
+world for all things that store private keys, so we should get over it
+and move on. Let’s go through this wallet’s features.</p>
+</div>
+<div class="paragraph">
+<p>Suppose, once again, that John wants to buy a cookie in the cafe
+(<a href="#fig0402">John buys a cookie using the wallet app. The cafe generates a key and displays to John a QR code with payment details. John scans the payment details and taps OK to approve the payment. John’s wallet sends an email to Lisa.</a>). Both John and the cafe are using this new app.</p>
+</div>
+<div id="fig0402" class="imageblock">
+<div class="content">
+<img src="images/ch04/04-02.svg" alt="{full-width}">
+</div>
+<div class="title">Figure 2. John buys a cookie using the wallet app. The cafe generates a key and displays to John a QR code with payment details. John scans the payment details and taps OK to approve the payment. John’s wallet sends an email to Lisa.</div>
+</div>
+<div class="paragraph">
+<p>The process goes through several steps:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">QR codes</div>
+<div class="paragraph">
+<p>Quick response (QR) codes are a way to make text scan-able. This QR code
+says “Hello”:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ch04/u04-01.svg" alt="u04 01">
+</div>
+</div>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The cafe asks its wallet to create a new address and request 10 CT
+to that address. This new address and the amount are displayed on the
+screen as a QR code. The QR code contains information on how much to
+pay, so John doesn’t have to type that in manually.</p>
+</li>
+<li>
+<p>John points his phone’s camera at the QR code to scan the payment
+details. It scans the <em>payment URI</em> (uniform resource identifier, a
+general specification on how to identify stuff; a web URL is an
+example of a URI):</p>
+<div class="literalblock">
+<div class="content">
+<pre>ct:19UzNFW4Fq8wm8mtWmoPZAzE3tcB9tZVtN?amount=10</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>This tells John’s phone to launch the cookie token wallet (<code>ct:</code>) and
+pay 10 (<code>amount=10</code>) cookie tokens to the address
+<code>19UzNFW4Fq8wm8mtWmoPZAzE3tcB9tZVtN</code>.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>John’s wallet displays the payment details to John, who checks that
+they’re reasonable and clicks OK.</p>
+</li>
+</ol>
+</div>
+<div class="sidebarblock inbitcoin">
+<div class="content">
+<div class="title">BIP21</div>
+<div class="paragraph">
+<p>BIPs (Bitcoin Improvement Proposals) are used to communicate ideas
+among developers. Some BIPs are adopted in Bitcoin software projects;
+others aren’t. All BIPs are available at <a href="#web-bips">[web-bips]</a>.</p>
+</div>
+<div class="paragraph">
+<p>Bitcoin adopted BIP21 as a way to transfer payment details from one
+wallet to another using a URI. Bitcoin URIs start with <code>bitcoin:</code>
+instead of <code>ct:</code>.</p>
+</div>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="4">
+<li>
+<p>John’s wallet creates an email to Lisa that looks the same as
+before.  The wallet automatically selects an address to send from and
+signs the message with the correct private key. On Lisa’s side,
+nothing has changed. She verifies and executes the payment exactly as
+before.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Let’s take a closer look at what John’s wallet does in step 4
+(<a href="#fig0403">John has just clicked OK in his wallet to approve the payment. The wallet takes care of the rest. It selects a key with enough funds and signs a message to Lisa. It then automatically emails the signed message to Lisa.</a>). The wallet does the same thing a user would do manually
+in the earlier examples.</p>
+</div>
+<div id="fig0403" class="imageblock">
+<div class="content">
+<img src="images/ch04/04-03.svg" alt="{big-width}">
+</div>
+<div class="title">Figure 3. John has just clicked OK in his wallet to approve the payment. The wallet takes care of the rest. It selects a key with enough funds and signs a message to Lisa. It then automatically emails the signed message to Lisa.</div>
+</div>
+<div class="paragraph">
+<p>Notice that the wallet manages three key pairs: two with funds and one
+with no funds. With this new wallet, users can have as many addresses
+as they want, which is good for privacy. The wallet will keep track of
+them for the user.</p>
+</div>
+<div class="paragraph">
+<p>The cafe’s wallet, as well as John’s wallet, will check the spreadsheet
+every now and then to see if there are any new payments concerning any
+of the wallet’s keys, as a sender, a recipient, or both (<a href="#fig0404">John’s and the cafe’s wallets check the spreadsheet every few seconds. If a new payment, either incoming or outgoing, is found, the wallet updates the balance of the concerned keys and notifies its user.</a>).</p>
+</div>
+<div id="fig0404" class="imageblock">
+<div class="content">
+<img src="images/ch04/04-04.svg" alt="{big-width}">
+</div>
+<div class="title">Figure 4. John’s and the cafe’s wallets check the spreadsheet every few seconds. If a new payment, either incoming or outgoing, is found, the wallet updates the balance of the concerned keys and notifies its user.</div>
+</div>
+<div class="sidebarblock inbitcoin">
+<div class="content">
+<div class="title">Unconfirmed transactions</div>
+<div class="paragraph">
+<p><em>Unconfirmed</em> means a transaction is created and sent to the Bitcoin
+network, but it isn’t yet part of the Bitcoin blockchain. You shouldn’t
+trust a payment until it’s part of the blockchain. The same goes for
+cookie token payments—don’t trust payments that aren’t in the
+spreadsheet.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Even though John knows about the payment before Lisa confirms it in
+the spreadsheet, his wallet won’t update the balance until it’s
+confirmed.  Why? Lisa might not approve the payment. Maybe the payment
+became corrupted during transfer, or the email ended up in Lisa’s spam
+folder, so she doesn’t see it.</p>
+</div>
+<div class="paragraph">
+<p>If the wallet updates the balance without first seeing it in the
+spreadsheet, it could give false information to John. The wallet
+could, of course, be kind enough to inform John that a payment is
+pending confirmation.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_private_key_backups">Private key backups</h3>
+<div class="paragraph">
+<p>The development team creates a feature to back up the wallet’s private
+keys. The idea is that the wallet creates a text file, the backup file,
+with all private keys in it and sends this file to an email address the
+user chooses.</p>
+</div>
+<div class="sidebarblock gbinfo">
+<div class="content">
+<div class="title">Why back up?</div>
+<div class="paragraph">
+<p>Your keys hold your money. If you lose your keys, you lose your
+money. A proper backup is <em>not</em> optional. You must take immediate,
+active steps to make sure your keys are backed up; otherwise you will
+sooner or later lose your money.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Imagine that John wants to back up his private keys. The wallet collects
+all the keys it has ever created and writes them into a text file
+(<a href="#fig0405">John backs up his private keys. They’re sent in a text file to his email address.</a>).</p>
+</div>
+<div id="fig0405" class="imageblock">
+<div class="content">
+<img src="images/ch04/04-05.svg" alt="{half-width}">
+</div>
+<div class="title">Figure 5. John backs up his private keys. They’re sent in a text file to his email address.</div>
+</div>
+<div class="paragraph">
+<p>The text file is emailed to John’s email address. Can you see any
+problems with this? Yes, the biggest problem is that the keys have
+left the privacy of the wallet application and are being sent into the
+wild.  Anyone with access to the email server or any other systems
+involved might be able to get the private keys without John noticing.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Problems</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Risk of theft</p>
+</li>
+<li>
+<p>Excessive backups</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>But another problem exists. As soon as John creates a new address
+after the backup is made, this new address isn’t backed up. John must
+make a new backup that includes the new key. For every new key, he
+must make a new backup. Doing backups for every address becomes
+tiresome for the user.</p>
+</div>
+<div class="paragraph">
+<p>Let’s look at a few simple solutions to these two problems:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Automatically send a backup when an address is created. This
+increases the risk of theft because you send more backups.</p>
+</li>
+<li>
+<p>Pre-create 100 addresses, and make a backup of them. Repeat when
+the first 100 addresses are used. This also increases the risk of
+theft, but not as much as solution 1.</p>
+</li>
+<li>
+<p>Encrypt the backup with a password. This will secure the backed-up
+keys from theft.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>A combination of solutions 2 and 3 seems like a good strategy; you
+seldom need to do a backup, and the backups are secured by a strong
+password.</p>
+</div>
+<div class="paragraph">
+<p>The process is similar to the previous process, but this time John
+enters a password that’s used to encrypt the private keys
+(<a href="#fig0406">John backs up his private keys. They’re sent in a file encrypted with a password that John enters into his phone.</a>).  If John loses his phone, he needs the password and the
+backup file to restore his private keys.</p>
+</div>
+<div id="fig0406" class="imageblock">
+<div class="content">
+<img src="images/ch04/04-06.svg" alt="{half-width}">
+</div>
+<div class="title">Figure 6. John backs up his private keys. They’re sent in a file encrypted with a password that John enters into his phone.</div>
+</div>
+<div class="paragraph">
+<p>If John loses his phone, he can easily install the wallet app on
+another phone. John sends the backup file to the app and enters his
+password; the keys are decrypted from the backup file and added to his
+wallet app.</p>
+</div>
+<div class="sect3">
+<h4 id="_a_few_words_on_password_strength">A few words on password strength</h4>
+<div class="paragraph">
+<p>A password’s strength is measured in <em>entropy</em>. The higher the
+entropy, the harder it is to guess the password. The word <em>entropy</em>,
+as used in information security, comes from thermodynamics and means
+disorder or uncertainty. Suppose you construct a password of 8
+characters from among the following 64 characters:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/</pre>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="imageblock">
+<div class="content">
+<img src="images/ch04/u04-03.svg" alt="u04 03">
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Each character in the password would then represent 6 bits of entropy
+because there are 64 = 2<sup>6</sup> possible characters. If you select the 8
+characters randomly (no cherry-picking, please!), say <code>E3NrkbA7</code>, the
+eight-character password will have 6 × 8 = 48 bits of entropy. This is
+equivalent in strength to 48 coin flips.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="imageblock">
+<div class="content">
+<img src="images/ch04/u04-02.svg" alt="u04 02">
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Suppose instead that you select random words from a dictionary of
+2<sup>11</sup>= 2,048 words. How many words do you need to use to beat the
+48-bit entropy of your eight-character password? Four words wouldn’t
+be enough because 4 × 11 = 44 bits of entropy. But five words
+corresponds to 55 bits of entropy, which beats the password’s entropy.</p>
+</div>
+<div class="paragraph">
+<p>A password’s real entropy also depends on what an attacker knows about
+the password. For example, suppose an attacker, Mallory, steals John’s
+encrypted backup file and tries to perform a brute-force attack
+on it. A <em>brute-force</em> attack means the attacker makes repeated
+password guesses, over and over, until they find the correct
+password. If Mallory knows the password’s length is exactly 8 and the
+characters are chosen from the 64 characters mentioned, the entropy is
+48 bits. If she happens to know that the second character is <code>3</code>, the
+entropy drops to 6 × 7 = 42 bits. On the other hand, if Mallory
+doesn’t know how many characters the password has, it will be harder
+for her, meaning the entropy will be higher.</p>
+</div>
+<div class="paragraph">
+<p>This is true only if password selection is truly random. If John uses
+cherry-picking to select the password <code>j0Hn4321</code>, the entropy
+decreases dramatically. Typical password brute-force attack programs
+first try a lot of known words and names in different variations
+before trying more “random-looking” passwords. John is a well-known
+name, so an attacker will try a lot of different variations of that
+name as well as many other names and words. For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>butter122 … waLk129 … go0die muh4mm@d
+john John JOhn JOHn JOHN j0hn j0Hn
+jOhn jOHn jOHN … john1 …
+… john12 J0hn12 … j0Hn321 …
+j0Hn4321</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Bingo! Suppose there are 1,000,000 common words and names, and each word
+can come in 100,000 variations, on average. That’s 100 billion different
+passwords to test, which corresponds to about 37 bits of entropy; 100
+billion tries will take a high-end desktop computer a few days to
+perform. Let’s say, for simplicity, that it takes one day. If John uses
+a truly random password, the entropy for the attacker is around 48 bits.
+It would take around 2,000 days, or about 5.5 years, to crack the
+password.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_problems_with_password_encrypted_backups">Problems with password-encrypted backups</h4>
+<div class="paragraph">
+<p>The process for password-encrypted backups works pretty well, but it
+also introduces new problems:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="imageblock">
+<div class="content">
+<img src="images/ch04/u04-04.svg" alt="u04 04">
+</div>
+</div>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">More things to secure</dt>
+<dd>
+<p>John now needs to keep track of two things: a
+backup file and a password. In the first version, only a backup file was
+needed.</p>
+</dd>
+</dl>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="imageblock">
+<div class="content">
+<img src="images/ch04/u04-05.svg" alt="u04 05">
+</div>
+</div>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Forgotten password</dt>
+<dd>
+<p>Passwords that are rarely used, as is the case
+with backup passwords, will eventually be forgotten. You can write them
+down on paper and store them in a safe place to mitigate this issue. You
+can also store them using password-manager software, such as LastPass or
+KeePass.</p>
+</dd>
+</dl>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="imageblock">
+<div class="content">
+<img src="images/ch04/u04-06.svg" alt="u04 06">
+</div>
+</div>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Technology advancements</dt>
+<dd>
+<p>As time passes, new, more advanced hardware
+and software is built that makes password cracking faster. If your
+eight-character password was safe five years ago, it’s not good enough
+today. Passwords need more entropy as technology improves. You can
+re-encrypt your backup files every two years with a stronger password,
+but that’s a complicated process that few users will manage.</p>
+</dd>
+</dl>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="imageblock">
+<div class="content">
+<img src="images/ch04/u04-07.svg" alt="u04 07">
+</div>
+</div>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Randomness is hard</dt>
+<dd>
+<p>Coming up with random passwords is really hard.
+When the app asks John for a password, he needs to produce one on the
+spot. He doesn’t have time to flip a coin 48 times to produce a good
+password. He will most likely make up something with far less entropy.
+One way to deal with this is to have the wallet give John a generated
+password. But this password is likely harder to remember than a
+self-invented password, which will increase the likelihood of a
+forgotten password.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>It seems you haven’t yet come up with a good way of dealing with
+backups. Let’s not settle for this half-bad solution—there are better
+approaches.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_hierarchical_deterministic_wallets">Hierarchical deterministic wallets</h3>
+<div class="sidebarblock inbitcoin">
+<div class="content">
+<div class="title">BIP32</div>
+<div class="paragraph">
+<p>This section describes a standard called BIP32, which is widely used
+by various Bitcoin wallet software. The BIPs are available online from
+<a href="#web-bips">[web-bips]</a>.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>One of the brighter developers at the company, a cryptographer, comes
+up with a new way to handle key creation to improve the backup
+situation and bring totally new features to wallets.</p>
+</div>
+<div class="paragraph important">
+<p>She realizes that if all private keys in a wallet were generated from
+a single random number called a <em>random seed</em>, the whole wallet
+could be backed up by writing down the seed on a piece of paper and
+storing it in a safe place (<a href="#fig0407">Backing up a seed. This is how you want to make backups.</a>).</p>
+</div>
+<div id="fig0407" class="imageblock">
+<div class="content">
+<img src="images/ch04/04-07.svg" alt="{big-width}">
+</div>
+<div class="title">Figure 7. Backing up a seed. This is how you want to make backups.</div>
+</div>
+<div class="paragraph">
+<p>She talks to some other cryptographers, and they decide on a strategy.
+They’re going to make an HD wallet. Basically, keys are organized as a
+tree, in which one key is the root of the tree, and this root can have
+any number of child keys. Each child key can in turn have a large
+number of children of its own, and so on.</p>
+</div>
+<div class="sidebarblock inbitcoin">
+<div class="content">
+<div class="title">BIP44</div>
+<div class="paragraph">
+<p>BIP44, Multi-Account Hierarchy for Deterministic Wallets, describes
+which branches of the tree are used for which purposes. For now, let’s
+use Rita’s chosen key organization.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Suppose Rita wants to organize her keys based on their purpose and
+generate five keys to use for shopping at the cafe and another three
+keys to use as a savings account. <a href="#fig0408">Rita creates two accounts, with five addresses in the shopping account and three addresses in the savings account.</a> shows how her keys could
+be organized.</p>
+</div>
+<div id="fig0408" class="imageblock">
+<div class="content">
+<img src="images/ch04/04-08.svg" alt="{half-width}">
+</div>
+<div class="title">Figure 8. Rita creates two accounts, with five addresses in the shopping account and three addresses in the savings account.</div>
+</div>
+<div class="paragraph">
+<p>The keys are organized as a tree, but it’s a tree turned upside down
+because that’s how computer geeks typically draw their trees. Anyway,
+the root key of the tree (at the top) is called the <em>master private
+key</em>. It’s the key from which all the rest of the keys are
+derived. The master private key has two <em>child keys</em>: one that
+represents the shopping account (left, in <a href="#fig0408">Rita creates two accounts, with five addresses in the shopping account and three addresses in the savings account.</a>) and one that
+represents the savings account (right). Each of these children has, in
+turn, its own children. The shopping account key has five children,
+and the savings account key has three children. These eight children
+have no children of their own, which is why they’re called <em>leaves</em> of
+the tree. The leaves are the private keys Rita uses to store cookie
+tokens, so an address is generated from each of these eight private
+keys.</p>
+</div>
+<div class="sidebarblock gbinfo">
+<div class="content">
+<div class="title">Indexes</div>
+<div class="paragraph">
+<p>Computer programmers often use the term <em>index</em> to denote a position
+in a list. It’s usually zero-based, meaning the first item in the list
+has index 0, the second item has index 1, and so on. We’ll use
+zero-based indexes throughout this book.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Note how the keys in the tree are numbered. Each set of children is
+numbered from 0 and upwards. This is used to give each key a unique
+identifier. For example the first, <em>index</em> 0, savings key is denoted
+<code>m/1/0</code>. <code>m</code> is special and refers to the master private key.</p>
+</div>
+<div class="paragraph">
+<p>How is a tree structure like this accomplished? Let’s look closer at
+the creation of some parts of the tree.</p>
+</div>
+<div class="paragraph">
+<p>Three important processes are performed to create the tree, as
+<a href="#fig0409">Creating the first two of Rita’s three savings keys. A random seed is used to create a master extended private key, which is then used to create child extended private keys.</a> shows:</p>
+</div>
+<div id="fig0409" class="imageblock">
+<div class="content">
+<img src="images/ch04/04-09.svg" alt="{big-width}">
+</div>
+<div class="title">Figure 9. Creating the first two of Rita’s three savings keys. A random seed is used to create a master extended private key, which is then used to create child extended private keys.</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>A random seed of 128 bits is generated. This seed is what the whole
+tree grows up (um, down) from.</p>
+</li>
+<li>
+<p>The <em>master extended private key</em> is derived from the seed.</p>
+</li>
+<li>
+<p>The descendant_ extended private keys_ of the master extended
+private key are derived.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>An <em>extended private key</em> (xprv) contains two items: a private key and a
+chain code (<a href="#fig0410">An xprv consists of a private key and a chain code.</a>).</p>
+</div>
+<div id="fig0410" class="imageblock">
+<div class="content">
+<img src="images/ch04/04-10.svg" alt="{half-width}">
+</div>
+<div class="title">Figure 10. An xprv consists of a private key and a chain code.</div>
+</div>
+<div class="paragraph">
+<p>The private key is indistinguishable from an old-type private key
+generated directly from a random number generator. You can use it to
+derive a public key and a cookie token address. You usually make
+addresses only out of leaves, but you could use internal keys as well.
+The other part of the xprv is the chain code. A chain code is the
+rightmost 256 bits of a 512-bit hash, hence the right-half hash icon
+in the figure. You’ll see soon how that hash is created. The chain
+code’s purpose is to provide entropy when generating a child xprv. The
+master xprv doesn’t differ from other xprvs, but we give it a special
+name because it’s the ancestor of all keys in the tree. It is,
+however, created differently.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="imageblock">
+<div class="content">
+<img src="images/ch04/u04-08.svg" alt="u04 08">
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>In step 1, the random seed is created in the same way as when you
+created private keys in <a href="ch02-hash-functions-and-signatures.html">[ch02]</a>. In this example, you generate 128
+bits of random data, but it could just as well be 256 bits depending
+on the level of security you want—128 bits are enough for most users.
+You’ll see later how the choice of seed size will affect the backup
+process; a longer seed means more writing on a piece of paper during
+backup. We’ll get back to this in <a href="#back-to-backup">Back to backup</a>.</p>
+</div>
+<div class="paragraph">
+<p>Steps 2 and 3 deserve their own subsections.</p>
+</div>
+<div class="sect3">
+<h4 id="_deriving_a_master_extended_private_key">Deriving a master extended private key</h4>
+<div class="sidebarblock">
+<div class="content">
+<div class="imageblock">
+<div class="content">
+<img src="images/ch04/u04-09.svg" alt="u04 09">
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Let’s look deeper into how to generate the master xprv (<a href="#fig0411">Deriving Rita’s master xprv. The seed is hashed with HMAC-SHA512. The resulting hash of 512 bits is split into the left 256 bits, which become the master private key, and the right 256 bits, which become the chain code.</a>).</p>
+</div>
+<div id="fig0411" class="imageblock">
+<div class="content">
+<img src="images/ch04/04-11.svg" alt="{big-width}">
+</div>
+<div class="title">Figure 11. Deriving Rita’s master xprv. The seed is hashed with HMAC-SHA512. The resulting hash of 512 bits is split into the left 256 bits, which become the master private key, and the right 256 bits, which become the chain code.</div>
+</div>
+<div class="sidebarblock gbinfo">
+<div class="content">
+<div class="title">“CT seed”?</div>
+<div class="paragraph">
+<p>An HMAC needs two inputs: a value to hash and a key. You don’t have or
+need a key for the master xprv because you have all the entropy you
+need in the seed.  In <a href="#fig0411">Deriving Rita’s master xprv. The seed is hashed with HMAC-SHA512. The resulting hash of 512 bits is split into the left 256 bits, which become the master private key, and the right 256 bits, which become the chain code.</a>, you input <code>CT seed</code> to give the
+HMAC <em>something</em>. A key is needed later, when you derive children of
+the master xprv.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>To create the master private key, the seed is hashed using HMAC-SHA512
+(HMAC is short for Hash Based Message Authentication Code), which
+produces a 512-bit hash value. HMAC-SHA512 is a special cryptographic
+hash function that, besides the normal single input, also takes a key.
+From a user’s perspective, you can regard HMAC-SHA512 as a normal
+cryptographic hash function but with multiple inputs. The hash value
+is split into the left 256 bits and the right 256 bits. The left 256
+bits become the master private key, which is a normal private key;
+it’s called the <em>master</em> private key because all other private keys
+are derived from this single private key (and the chain code). The
+right 256 bits become the <em>chain code</em>, used in the next step to
+derive children from the master xprv.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_deriving_a_child_extended_private_key">Deriving a child extended private key</h4>
+<div class="sidebarblock">
+<div class="content">
+<div class="imageblock">
+<div class="content">
+<img src="images/ch04/u04-10.svg" alt="u04 10">
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>You just created Rita’s master xprv. It’s time to derive the child xprv
+that groups together her three savings keys. The direct children of an
+xprv can be derived in any order. Let’s derive the savings account key,
+<code>m/1</code>, first. The process for deriving a child xprv from a parent xprv
+is as follows (<a href="#fig0412">Deriving a child xprv from a parent xprv. The parent’s public key and chain code and the desired index are hashed together. The parent private key is added to the left half of the hash, and the sum becomes the child private key. The right half becomes the child chain code.</a>):</p>
+</div>
+<div id="fig0412" class="imageblock">
+<div class="content">
+<img src="images/ch04/04-12.svg" alt="{full-width}">
+</div>
+<div class="title">Figure 12. Deriving a child xprv from a parent xprv. The parent’s public key and chain code and the desired index are hashed together. The parent private key is added to the left half of the hash, and the sum becomes the child private key. The right half becomes the child chain code.</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The desired index is appended to the parent public key.</p>
+</li>
+<li>
+<p>The public key and index become the input to HMAC-SHA512. The parent
+chain code acts as a source of entropy to the hash function. To
+simplify, think of it as three pieces of data are hashed together.</p>
+</li>
+</ol>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="imageblock">
+<div class="content">
+<img src="images/ch04/u04-11.svg" alt="u04 11">
+</div>
+</div>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="3">
+<li>
+<p>The 512-bit hash value is split in half:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The left 256 bits are added, with normal addition (modulo 2<sup>256</sup>), to
+the parent private key. The sum becomes the child private key.</p>
+</li>
+<li>
+<p>The right 256 bits become the child chain code.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The child private key and the child chain code together form the child
+xprv.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>This same process is used for all children and grandchildren of the
+master xprv until you have all the keys Rita wanted in her wallet.</p>
+</div>
+<div class="paragraph">
+<p>You might be wondering why you need the addition—why not use the left
+256 bits as the child private key? The 512-bit hash is calculated from
+the public key and the chain code—collectively called the <em>extended
+public key</em> (xpub)—and an index. You’ll see later how to use the xpub
+in less secure environments, such as a web server, to generate a
+corresponding tree of <em>public</em> keys. You need to add the parent
+private key to the left 256 bits to make it impossible for someone
+with the xpub to generate child private keys.</p>
+</div>
+</div>
+</div>
+<div class="sect2 periscope">
+<h3 id="_where_were_we">Where were we?</h3>
+<div class="paragraph">
+<p>Let’s recall why you’re here: to create a wallet app that makes life
+easier for end users (<a href="#fig0413">You’re working on making a great wallet for users.</a>).</p>
+</div>
+<div id="fig0413" class="imageblock">
+<div class="content">
+<img src="images/ch04/04-13.svg" alt="{full-width}">
+</div>
+<div class="title">Figure 13. You’re working on making a great wallet for users.</div>
+</div>
+<div class="paragraph">
+<p>The main duties of a wallet are to</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Manage private keys</p>
+</li>
+<li>
+<p>Create new addresses</p>
+</li>
+<li>
+<p>Transfer payment details from payee to payer</p>
+</li>
+<li>
+<p>Make a payment</p>
+</li>
+<li>
+<p>Keep track of funds</p>
+</li>
+<li>
+<p>Back up private keys</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>We’ve covered the first five items, but we aren’t quite finished with
+backups. We just looked at xprv derivation, which is the groundwork for
+better backups.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="back-to-backup">Back to backup</h3>
+<div class="sidebarblock inbitcoin">
+<div class="content">
+<div class="title">But the key paths?</div>
+<div class="paragraph">
+<p>To restore keys, you also need their paths. In Bitcoin, those paths
+are standardized in BIP44. If a wallet uses that standard, you
+implicitly know the keys’ paths.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>You want a safe, easy way to back up private keys. You’ve created an HD
+wallet to generate any number of private keys from a single seed. What’s
+the minimum Rita needs to back up to restore all keys in her wallet,
+should she lose it? Right: the seed (and the tree structure, see
+margin). As long as her seed is safe, she can always re-create all her
+keys.</p>
+</div>
+<div class="paragraph">
+<p>Suppose Rita’s 128-bit (16-byte) seed is</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>16432a207785ec5c4e5a226e3bde819d</pre>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="imageblock">
+<div class="content">
+<img src="images/ch04/u04-13.svg" alt="u04 13">
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>It’s a lot easier to write these 32-hex digits on a piece of paper than
+it would be to write her eight private keys. But the biggest win is that
+Rita can write this down once and lock it in a safe. As long as that
+paper is safe, her wallet is safe from accidental loss. She can even
+create new keys from the same seed without having to make another
+backup.</p>
+</div>
+<div class="paragraph">
+<p>But it’s still difficult to write this down without any typos. What if
+Rita makes a typo and then loses her wallet? She won’t be able to
+restore any of her keys! You need something even simpler that’s more
+compatible with how humans work.</p>
+</div>
+<div class="sect3">
+<h4 id="_mnemonic_sentences">Mnemonic sentences</h4>
+<div class="sidebarblock inbitcoin">
+<div class="content">
+<div class="title">BIP39</div>
+<div class="paragraph">
+<p>Most Bitcoin wallets use mnemonic sentences for backup. This is
+standardized in BIP39. Before that, wallets typically used
+password-protected files with all keys, which caused a lot of
+headache.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Recall that the seed is a sequence of bits. For example, Rita’s seed
+is 128 bits long. What if you could encode those bits in a more
+human-friendly way? You can!</p>
+</div>
+<div class="paragraph">
+<p>Rita’s wallet can display the seed as a sequence of 12 English words,
+called a <em>mnemonic sentence</em>:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Seed: 16432a207785ec5c4e5a226e3bde819d
+Mnemonic: bind bone marine upper gain comfort
+          defense dust hotel ten parrot depend</pre>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p><span class="image"><img src="images/ch04/u04-14.svg" alt="u04 14"></span></p>
+</div>
+</div>
+</div>
+<div class="paragraph important">
+<p>This mnemonic sentence encodes the seed in a human-readable way. It’s
+much more approachable to write down 12 words than it is to write down
+cryptic hex code. If Rita loses her wallet, she can install the wallet
+app on another phone and restore the seed from those 12 words. Rita
+can regenerate all her private keys from that seed.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_encoding_a_seed_into_a_mnemonic_sentence">Encoding a seed into a mnemonic sentence</h4>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+We’re going to explore how this encoding works. It’s really fun, but if
+you think this section goes too deep, you can accept the previous
+paragraph and skip to <a href="#extended-public-keys">Extended public keys</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The encoding starts with the random seed, as shown in <a href="#fig0414">Encoding a random seed as a 12-word mnemonic sentence. The seed is checksummed, and every group of 11 bits is looked up in a word list of 2,048 words.</a>. The
+seed is hashed with SHA256, and the first 4 bits of the hash—in this
+case, <code>0111</code>—are appended to the seed. Those 4 bits act as a checksum.
+You then arrange the bits into 12 groups of 11 bits, where each group
+encodes a number in the range 0 to 2047. Eleven bits can encode
+2<sup>11</sup> = 2,048 different values, remember?</p>
+</div>
+<div id="fig0414" class="imageblock">
+<div class="content">
+<img src="images/ch04/04-14.svg" alt="{full-width}">
+</div>
+<div class="title">Figure 14. Encoding a random seed as a 12-word mnemonic sentence. The seed is checksummed, and every group of 11 bits is looked up in a word list of 2,048 words.</div>
+</div>
+<div class="paragraph">
+<p>The 12 numbers are looked up in a standardized word list of 2,048
+words numbered from 0 to 2047. You can find this list in BIP39 from
+<a href="#web-bips">[web-bips]</a>; it contains commonly used English words. After looking
+up all 12 numbers, the result is the mnemonic sentence.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p><span class="image"><img src="images/ch04/u04-15.svg" alt="u04 15"></span></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>The sentence doesn’t mean anything in particular. It’s 12 random words,
+just like the hex-encoded seed is 32 random hex digits.</p>
+</div>
+<div class="paragraph">
+<p>Rita’s wallet shows the mnemonic sentence to her, and she writes the 12
+words down on a piece of paper. She puts the paper in a safe place and
+gets on with her life.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_decoding_a_mnemonic_sentence_into_a_seed">Decoding a mnemonic sentence into a seed</h4>
+<div class="sidebarblock">
+<div class="content">
+<div class="imageblock">
+<div class="content">
+<img src="images/ch04/u04-16.svg" alt="u04 16">
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>The next day, Rita drops her phone into the ocean, and it disappears
+into the deep. She lost her wallet! But Rita isn’t very concerned. She
+buys a new phone and installs the wallet app. She instructs her app to
+restore from a backup. The wallet asks her for her mnemonic sentence.
+She writes</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>bind bone marine upper gain comfort
+defense dust hotel ten parrot depend</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>into the wallet app. The app decodes the sentence by reversing the
+encoding process; Rita can regenerate her keys from the decoded seed,
+as <a href="#fig0415">Decoding a mnemonic sentence into the seed</a> shows.</p>
+</div>
+<div id="fig0415" class="imageblock">
+<div class="content">
+<img src="images/ch04/04-15.svg" alt="{big-width}">
+</div>
+<div class="title">Figure 15. Decoding a mnemonic sentence into the seed</div>
+</div>
+<div class="paragraph">
+<p>The decoding uses the 4-bit checksum to make sure it’s correct. If Rita
+accidentally writes the last word as <code>deposit</code> instead of <code>depend</code>,
+the checksum check will <em>probably</em> fail because she wrote the wrong
+word at the end. If she types <code>depends</code> instead of <code>depend</code>, the
+decoding will definitely fail because there’s no word <code>depends</code> in the
+word list.</p>
+</div>
+<div class="paragraph">
+<p>The checksum is pretty weak—4 bits make only 16 possible checksums. A
+wrongly written mnemonic sentence, in which all words exist in the
+word list, would have a 1/16 probability of not being detected. This
+seems bad. But the probability that you’d write such a sentence is
+small, because your misspelled words have to exist in the word
+list. This reduces the risk of an invalid mnemonic sentence being
+restored.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="extended-public-keys">Extended public keys</h3>
+<div class="sidebarblock">
+<div class="content">
+<div class="imageblock">
+<div class="content">
+<img src="images/ch04/u04-17.svg" alt="u04 17">
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Rita created her wallet from a random 128-bit seed, which she backed
+up with a 12-word mnemonic sentence. Her wallet can create any number
+of private keys from that seed. She can organize them into different
+“accounts” as she pleases. Very nice. But HD wallets have another
+feature: you can create a tree of public keys and chain codes without
+knowing any of the private keys.</p>
+</div>
+<div class="paragraph">
+<p>Suppose the cafe uses an HD wallet. It wants to start selling cookies on
+its website and delivering those cookies to coworkers’ cubicles.</p>
+</div>
+<div class="paragraph">
+<p>For privacy reasons, the web server needs to be able to present a new
+cookie token address for every sale, but where does it get the
+addresses? The cafe could create an xprv for an <em>online sales</em>
+account in its HD wallet and put that xprv on the web server, as
+<a href="#fig0416">The cafe copies its online sales xprv to the web server.</a> shows.</p>
+</div>
+<div id="fig0416" class="imageblock">
+<div class="content">
+<img src="images/ch04/04-16.svg" alt="{big-width}">
+</div>
+<div class="title">Figure 16. The cafe copies its online sales xprv to the web server.</div>
+</div>
+<div class="paragraph">
+<p>The web server can now create new addresses as the orders pour in.
+Great! But what if Mallory, the gangster, gains access to the web
+server’s hard drive? She can steal all the money in any of the addresses
+in the online sales account. She can’t steal from any other addresses in
+the tree. For example, she can’t calculate any key in the <em>counter
+sales</em> account because she doesn’t have access to the master xprv, which
+is needed to calculate the counter sales account key and all its
+children.</p>
+</div>
+<div class="paragraph">
+<p>Typical web servers are prone to hacking attempts because they’re
+usually accessible from anywhere in the world. Storing money on the
+web server would probably attract a lot of hacking attempts. Sooner or
+later, someone would succeed in getting access to the web server’s
+hard drive, and steal the xprv.</p>
+</div>
+<div class="paragraph">
+<p>For this reason, the cafe wants to avoid having any private keys on
+the web server. Thanks to the HD wallet, this is possible by using
+xpubs (<a href="#fig0417">An xpub consists of a public key and a chain code.</a>).</p>
+</div>
+<div id="fig0417" class="imageblock">
+<div class="content">
+<img src="images/ch04/04-17.svg" alt="{half-width}">
+</div>
+<div class="title">Figure 17. An xpub consists of a public key and a chain code.</div>
+</div>
+<div class="paragraph">
+<p>An xpub is similar to an xprv, but the xpub contains a public key and
+a chain code, whereas the xprv contains a private key and a chain
+code. An xprv shares the chain code with the xpub. You can create an
+xpub from an xprv, but you can’t create the xprv from the xpub. This
+is because public key derivation is a one-way function; a public key
+can be derived from a private key, but a private key can’t be derived
+from a public key.</p>
+</div>
+<div class="paragraph">
+<p>The cafe puts the xpub <code>M/1</code> on the web server. By convention, we use
+<code>M</code> to denote an xpub path and <code>m</code> to denote an xprv path. <code>M/1</code> and
+<code>m/1</code> have the same chain code, but <code>M/1</code> doesn’t have the private key,
+only the public key. You can create the whole xpub tree from the master
+xpub (<a href="#fig0418">Generating the tree of xpubs from the master xpub. The general pattern is the same as when generating xprvs, but the child-derivation function differs.</a>), which means you can generate any and all addresses
+without any private key. You can create addresses, but not spend money
+from those addresses.</p>
+</div>
+<div id="fig0418" class="imageblock">
+<div class="content">
+<img src="images/ch04/04-18.svg" alt="{big-width}">
+</div>
+<div class="title">Figure 18. Generating the tree of xpubs from the master xpub. The general pattern is the same as when generating xprvs, but the child-derivation function differs.</div>
+</div>
+<div class="paragraph">
+<p>This looks exactly like when you generated the tree of xprvs. The
+difference is that you have no private keys. As <a href="#fig0419">Xpub derivation. The private key addition from the xprv derivation is replaced by public key “addition.”</a> shows, the
+xpubs are generated differently than the xprvs. Please compare this to
+the xprv derivation.</p>
+</div>
+<div id="fig0419" class="imageblock">
+<div class="content">
+<img src="images/ch04/04-19.svg" alt="{full-width}">
+</div>
+<div class="title">Figure 19. Xpub derivation. The private key addition from the xprv derivation is replaced by public key “addition.”</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">xprv derivation</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ch04/u04-18.svg" alt="u04 18">
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>This resembles xprv derivation. The difference is what you do with the
+left 256 bits of the 512-bit hash. To calculate the child public key,
+you treat the left 256 bits as if they were a private key and derive a
+public key from them. This public key is then added to the parent
+public key using the special <em>public key addition</em> operation. The
+result is the child public key. Let’s compare the child public key
+derivation to the child private key derivation (<a href="#fig0420">The plus on the private side has a corresponding plus on the public side. The parent private key plus some value is the child private key. The parent public key plus the public key derived from the same value is the child public key.</a>) from the
+point after generating the left 256 bits of the HMAC-SHA256 hash.</p>
+</div>
+<div id="fig0420" class="imageblock">
+<div class="content">
+<img src="images/ch04/04-20.svg" alt="{big-width}">
+</div>
+<div class="title">Figure 20. The plus on the private side has a corresponding plus on the public side. The parent private key plus some value is the child private key. The parent public key plus the public key derived from the same value is the child public key.</div>
+</div>
+<div class="paragraph">
+<p>Normal addition is used for the private key. You add a 256-bit number
+to the parent private key to get the child private key. But to keep
+the result within 256-bit numbers, you use addition <em>modulo</em> 2<sup>256</sup>.</p>
+</div>
+<div class="paragraph">
+<p>The addition used to derive the child public key isn’t exactly what most
+people (including me) are used to. For now, let’s just say this addition
+works. We’ll dig deeper into that in <a href="#public-key-math">Public key math</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="hardened-key-derivation">Deriving hardened private keys</h3>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+This section is challenging. If you had a hard time
+understanding xprv derivation and xpub derivation, I suggest skipping
+this section and jumping to <a href="#public-key-math">Public key math</a>. You don’t need this
+section to understand the rest of this book.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>This section will explain how to prevent a potential security issue
+with normal xprv derivation.</p>
+</div>
+<div class="paragraph">
+<p>The cafe’s online business works well. People are ordering cookies
+like crazy! The online sales account grows, with a new public key for
+every order. The xpub for the online sales account sits on the web
+server, and the xprv is present only in the cafe’s wallet (and in a
+locked-away mnemonic sentence).</p>
+</div>
+<div class="paragraph">
+<p>Suppose Mallory somehow steals the private key <code>m/1/1</code>, which contains
+only 10 CT. This might seem harmless because that private key has so
+little money in it. But it could be worse than that. If Mallory has
+also managed to get the xpub for the online sales account from the web
+server, she can <em>calculate the online sales xprv</em>, as <a href="#fig0421">Mallory has stolen the private key <code>m/1/1</code> from the cafe and the parent xpub from the web server. She can now steal all the money in the online sales account.</a>
+shows.</p>
+</div>
+<div id="fig0421" class="imageblock">
+<div class="content">
+<img src="images/ch04/04-21.svg" alt="{full-width}">
+</div>
+<div class="title">Figure 21. Mallory has stolen the private key <code>m/1/1</code> from the cafe and the parent xpub from the web server. She can now steal all the money in the online sales account.</div>
+</div>
+<div class="paragraph">
+<p>Remember how the xprv derivation function used normal addition to
+calculate a child private key from a parent private key?</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\text{"m/1"} + \text{"left half hash of index 1"}=\text{"m/1/1"}\$
+</div>
+</div>
+<div class="paragraph">
+<p>You can write this just as well as</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\text{"m/1/1"}-\text{"left half hash of index 1"}=\text{"m/1"}\$
+</div>
+</div>
+<div class="paragraph">
+<p>Mallory has everything she needs to calculate the left-half hash for any
+child index of <code>M/1</code> she pleases, but she doesn’t know which index her
+stolen private key has, so she starts testing with index 0:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\text{"m/1/1"} - \text{"left half hash of index 0"} = \text{"a private key"}\$
+</div>
+</div>
+<div class="paragraph">
+<p>She derives the public key from this private key and notices that it
+doesn’t match <code>M/1</code>, so <code>0</code> wasn’t the correct index. She then tries
+index <code>1</code>:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\text{"m/1/1"} - \text{"left half hash of index 1"} = \text{"another private key"}\$
+</div>
+</div>
+<div class="paragraph">
+<p>This private key derives to the public key <code>M/1</code>. Bingo! She has
+calculated the private key <code>m/1</code> for the online sales account. The xprv
+shares the chain code with the xpub, so she also has the xprv for <code>m/1</code>,
+and she can calculate the private key tree for the account. Mallory
+steals all the money from the online sales account. Not good.</p>
+</div>
+<div class="paragraph">
+<p>Now think about what would happen if Mallory had the master xpub. She
+could use the same technique to derive the master xprv from the master
+xpub and <code>m/1/1</code>. Mallory can re-create all the private keys of all
+accounts in the entire wallet. Can you do something to prevent such a
+catastrophic scenario? Yes, with <em>yet another key-derivation
+function</em>! This new key-derivation function is called <em>hardened xprv
+derivation</em>.</p>
+</div>
+<div class="paragraph">
+<p>Suppose the cafe wants to prevent Mallory from accessing the master
+xprv, even if she got the master xpub and a private key in the online
+sales account. The cafe can generate the xprv for the online sales
+account using hardened xprv derivation, as <a href="#fig0422">Deriving a hardened child xprv for the online sales account. You use the parent private key as input to the hash function instead of the public key.</a> shows.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Normal child xprv derivation</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ch04/u04-19.svg" alt="u04 19">
+</div>
+</div>
+</div>
+</div>
+<div id="fig0422" class="imageblock">
+<div class="content">
+<img src="images/ch04/04-22.svg" alt="{big-width}">
+</div>
+<div class="title">Figure 22. Deriving a hardened child xprv for the online sales account. You use the parent private key as input to the hash function instead of the public key.</div>
+</div>
+<div class="paragraph">
+<p>The apostrophe in <code>m/1'</code> isn’t a typo: it’s used to denote hardened
+key derivation. The difference is that with hardened key derivation,
+you hash the <em>private</em> key instead of the public key. An attacker
+can’t do the “minus” trick anymore because the hash is derived from
+the parent private key. Mallory can’t calculate the left-half hash to
+subtract from the child private key because she doesn’t have the
+parent private key. <a href="#fig0423">The master xpub can’t be used to generate any child keys because <code>m/0'</code> and <code>m/1'</code> are hardened keys.</a> illustrates the result.</p>
+</div>
+<div id="fig0423" class="imageblock">
+<div class="content">
+<img src="images/ch04/04-23.svg" alt="{big-width}">
+</div>
+<div class="title">Figure 23. The master xpub can’t be used to generate any child keys because <code>m/0'</code> and <code>m/1'</code> are hardened keys.</div>
+</div>
+<div class="paragraph">
+<p>This also means you can’t derive a hardened child xpub from a parent
+xpub. You must have the parent xprv to generate any children, public
+or private. The children of <code>m/1'</code> can’t be derived as hardened
+private keys because that would require the cafe to put the private
+key <code>m/1'</code> on the online sales web server, which would be
+insecure. Using nonhardened leaf keys in the online sales account
+makes the cafe vulnerable to an attacker stealing <code>m/1'/1</code> and
+<code>M/1'</code>. If that happens, all funds in the account will be stolen. With
+hardened xprv, you solve the case of a stolen <code>M</code> and <code>m/1'/1</code> but not
+the case with a stolen <code>M/1'</code> and <code>m/1'/1</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="public-key-math">Public key math</h3>
+<div class="paragraph">
+<p>This section digs deeper into the math behind public keys. We’ll start
+by looking at how a public key is derived from a private key using
+<em>public key multiplication</em>. Later subsections will show why child
+xpub derivation, using <em>public key addition</em>, works, and how public
+keys are encoded in Bitcoin.</p>
+</div>
+<div class="sect3">
+<h4 id="_public_key_multiplication">Public key multiplication</h4>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+I’ll try to explain this topic in simple terms, but if you think it’s
+too much, you can skip this section and jump to <a href="#ch04-recap">Recap</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Normal public key derivation</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ch04/u04-20.svg" alt="u04 20">
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Think back to when you derived a public key from a private key in
+<a href="ch02-hash-functions-and-signatures.html">[ch02]</a>. I didn’t really tell you <em>how</em> the public key was derived.
+I’ll make an attempt here instead.</p>
+</div>
+<div class="paragraph">
+<p>A public key in Bitcoin is a whole-number solution to this equation:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$y^2 = x^3 + 7 \mod{(2^{256}-4294968273)}\$
+</div>
+</div>
+<div class="paragraph">
+<p>Many such solutions exist, about \$2^{256}\$ of them, so let’s
+simplify by using the solutions to \$y^2 = x^3 + 7 \mod{11}\$
+instead (<a href="#fig0424">Whole-number solutions to the elliptic curve \$y^2 = x^3 + 7 \mod{11}\$. Each such solution is a public key.</a>).</p>
+</div>
+<div class="sidebarblock inbitcoin">
+<div class="content">
+<div class="title">Bitcoin uses this curve</div>
+<div class="paragraph">
+<p>This specific elliptic curve is called <em>secp256k1</em> and is used in
+Bitcoin. Plenty of other curves have similar properties.</p>
+</div>
+</div>
+</div>
+<div id="fig0424" class="imageblock">
+<div class="content">
+<img src="images/ch04/04-24.svg" alt="{half-width}">
+</div>
+<div class="title">Figure 24. Whole-number solutions to the elliptic curve \$y^2 = x^3 + 7 \mod{11}\$. Each such solution is a public key.</div>
+</div>
+<div class="sidebarblock gbinfo">
+<div class="content">
+<div class="title">Curve? I see only dots.</div>
+<div class="paragraph">
+<p>It’s called a <em>curve</em> because in the continuous, real-number world,
+the solutions form a curve like this:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ch04/u04-21.svg" alt="u04 21">
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>The previous equations are examples of a class of equations called
+<em>elliptic curves</em>, and a solution is often referred to as a <em>point
+on the curve</em>. You can now calculate a public key, which is a point
+on the curve, from a private key. To do this, start at a special
+point, \$G=(6,5)\$, on the curve. \$G\$ is somewhat arbitrarily
+chosen, but it’s widely known by everybody to be the starting point
+for public key derivation. <em>The public key is the private key
+multiplied by \$G\$.</em></p>
+</div>
+<div class="paragraph">
+<p>Suppose your private key is \$5\$. Then your public key is \$5G\$.</p>
+</div>
+<div class="paragraph">
+<p>To calculate this multiplication, you need two basic public key
+operations: addition and doubling, where doubling can be seen as
+adding a point to itself.</p>
+</div>
+<div class="paragraph">
+<p>To add two points (<a href="#fig0425">Point addition. You add \$(x, y)=(6,5)\$ to \$(2, 2)\$ by drawing a straight line through them that will intersect a third point.</a>), you draw a straight line that “wraps
+around” the edges of the diagram and that intersects your two points
+and one third point. This third point is the negative result of the
+addition. To get the final result of the addition, take the symmetric
+point at the same \$x\$ value.</p>
+</div>
+<div id="fig0425" class="imageblock">
+<div class="content">
+<img src="images/ch04/04-25.svg" alt="{half-width}">
+</div>
+<div class="title">Figure 25. Point addition. You add \$(x, y)=(6,5)\$ to \$(2, 2)\$ by drawing a straight line through them that will intersect a third point.</div>
+</div>
+<div class="sidebarblock gbinfo">
+<div class="content">
+<div class="title">Is there always a third point?</div>
+<div class="paragraph">
+<p>Yes, there’s always a line that intersects a third point. It’s one of
+the curve’s important properties.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>The result of \$(6, 5) + (2, 2)\$ is \$(7, 8)\$. The straight
+line between the two points crosses the point \$(7, 3)\$. The
+complement point to \$(7, 3)\$ is \$(7, 8)\$, which is the
+result of the addition.</p>
+</div>
+<div class="paragraph">
+<p>To double a point (<a href="#fig0426">Point doubling. To double a point P, draw a line through P with a special slope that’s calculated from P. The line crosses another point, \$(3,10)\$. The complement point \$(3, 1)\$ is the doubling result.</a>) is to add it to itself, but there’s no
+slope to be calculated from a single point. In this special case, you
+calculate the slope from the single point \$P=(6,5)\$ as
+\$3*x^2*(2y)^{-1} \mod{11} = 2\$. The process is almost the same as
+adding two different points, but you calculate the slope of the line
+differently.</p>
+</div>
+<div id="fig0426" class="imageblock">
+<div class="content">
+<img src="images/ch04/04-26.svg" alt="{half-width}">
+</div>
+<div class="title">Figure 26. Point doubling. To double a point P, draw a line through P with a special slope that’s calculated from P. The line crosses another point, \$(3,10)\$. The complement point \$(3, 1)\$ is the doubling result.</div>
+</div>
+<div class="paragraph">
+<p>Using these two basic operations, adding and doubling, you can derive
+the multiplication of \$5\$ and \$G\$. In binary form, \$5\$ is</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$101_{binary} = 1*2^2 + 0*2^1 + 1*2^0\$
+</div>
+</div>
+<div class="paragraph">
+<p>Your public key is then</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$5G = 1*2^2*G + 0*2^1*G + 1*2^0*G\$
+</div>
+</div>
+<div class="paragraph">
+<p>Start in \$G\$ and calculate the resulting public key point by taking
+terms from right to left:</p>
+</div>
+<div class="sidebarblock gbinfo">
+<div class="content">
+<div class="title">Elliptic curve calculator</div>
+<div class="paragraph">
+<p>There’s a nice elliptic curve calculator at
+<a href="#web-elliptic-curve-calculator">[web-elliptic-curve-calculator]</a> that you can play with to get a
+better feel for how this works.</p>
+</div>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Calculate \$2^0*G = 1*G = G\$. Easy. Now remember this point.</p>
+</li>
+<li>
+<p>Calculate \$2^1*G = 2*G\$. This is a point doubling of the
+previously remembered point <em>G</em> from step 1. Remember the point. Because
+there is a 0 in front of \$2^1*G\$, you don’t do anything with
+it—just remember it.</p>
+</li>
+<li>
+<p>Calculate \$2^2*G = 2*2*G\$, which is a doubling of the
+previously remembered point \$2*G\$. Because there is a 1 in front of
+the \$2^2*G\$ term, you add this result to the result of step 1.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>In short, multiplication is performed by a sequence of adding and
+doubling operations.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_why_is_this_secure">Why is this secure?</h4>
+<div class="paragraph">
+<p>The multiplication process is pretty easy to complete; it takes about
+256 steps for a 256-bit private key. But to reverse this process is a
+totally different story. No known way exists to get the private key by
+point “division” (for example, point \$(6,6)\$ “divided by”
+\$G\$). The only known way is to try different private keys and see
+if the public key is what you’re looking for. This is what makes
+public-key derivation a one-way function.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_xpub_derivation">Xpub derivation</h4>
+<div class="paragraph">
+<p>You’ve seen how an ordinary public key is derived from a private key
+through public-key multiplication. But how can adding the parent public
+key with the public key derived from the left 256 bits make the child
+public key? See <a href="#fig0427">The child public key is derived by adding the parent public key with the public key derived from the left 256 bits.</a>.</p>
+</div>
+<div id="fig0427" class="imageblock">
+<div class="content">
+<img src="images/ch04/04-27.svg" alt="{half-width}">
+</div>
+<div class="title">Figure 27. The child public key is derived by adding the parent public key with the public key derived from the left 256 bits.</div>
+</div>
+<div class="paragraph">
+<p>You can convince yourself that it works by looking at both normal
+public-key derivation and child public-key derivation in the same
+picture: see <a href="#fig0428">Xpub derivation and normal public-key derivation. A normal public key is the starting point <em>G</em> multiplied by a private key. A child public key is the parent public key added to the public key derived from the left-half hash.</a>.</p>
+</div>
+<div id="fig0428" class="imageblock">
+<div class="content">
+<img src="images/ch04/04-28.svg" alt="{big-width}">
+</div>
+<div class="title">Figure 28. Xpub derivation and normal public-key derivation. A normal public key is the starting point <em>G</em> multiplied by a private key. A child public key is the parent public key added to the public key derived from the left-half hash.</div>
+</div>
+<div class="paragraph">
+<p>The nice thing with elliptic curves is that the special public key
+“add” operation works a bit like normal add. The same goes for the
+special public key “multiplication.” You can thus solve some
+equations:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$c=p+h \\
+C=Gh+Gp=G(h+p)=Gc\$
+</div>
+</div>
+<div class="paragraph">
+<p>The result, \$C=Gc\$, is exactly how to derive the public key
+\$C\$ from the private key \$c\$.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_public_key_encoding">Public key encoding</h4>
+<div class="paragraph">
+<p>Do you remember how John’s public key looked like a big number?</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>035541a13851a3742489fdddeef21be13c1abb85e053222c0dbf3703ba218dc1f3</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>That doesn’t look like a pair of coordinates, does it? The public key is
+encoded in a certain way. Because of the symmetry, exactly two points
+exist for every value of \$x\$, one with an even \$y\$ value and one
+with an odd \$y\$ value (<a href="#fig0429">Each point on the curve has a symmetric point at the same \$x\$ value.</a>).</p>
+</div>
+<div id="fig0429" class="imageblock">
+<div class="content">
+<img src="images/ch04/04-29.svg" alt="04 29">
+</div>
+<div class="title">Figure 29. Each point on the curve has a symmetric point at the same \$x\$ value.</div>
+</div>
+<div class="paragraph">
+<p>You don’t need to store \$y\$ values, only whether the \$y\$
+value is even or odd. You do this by prefixing the \$x\$ value with
+<code>02</code> (even) or <code>03</code> (odd). In John’s case, the \$y\$ value happens
+to be odd, so the prefix is <code>03</code>.</p>
+</div>
+<div class="paragraph">
+<p>This is why public keys are 33 bytes and not 32 bytes. It’s a 256-bit
+number—the \$x\$-coordinate—prefixed by a byte specifying the odd/even
+property.</p>
+</div>
+<div class="paragraph">
+<p>The curve in the figure has a single point \$x=5, y=0\$. This
+doesn’t look symmetric, but it’s a so-called <em>double-root</em> to the
+curve—it’s two points with the same \$y\$ value 0. They’re symmetric
+because they’re at equal distance 5.5 from the symmetry line. In this
+special case, both these points will use <code>02</code> because 0 is even.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ch04-recap">Recap</h3>
+<div class="paragraph">
+<p>Let’s look back at what you’ve learned in this chapter. An HD wallet
+generates a tree of keys from a random seed. It can use key hardening
+to isolate different branches of the tree from each other.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="imageblock">
+<div class="content">
+<img src="images/ch04/u04-23.svg" alt="u04 23">
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Users back up their keys by writing the random seed in the form of 12
+to 24 English words on a piece of paper and lock it up safely.</p>
+</div>
+<div class="paragraph">
+<p>The cafe accepts cookie tokens in its online shop. It only puts the
+xpub for the online sales account, <code>M/1'</code>, on the web server, which
+can now create as many addresses as needed without using any private
+keys. The private keys are kept in the cafe’s wallet and never touch
+the web server.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ch04/u04-22.svg" alt="{full-width}">
+</div>
+</div>
+<div class="sect3">
+<h4 id="_system_changes">System changes</h4>
+<div class="paragraph">
+<p>Our concept table (<a href="#tab0401">Nothing new in the concept table</a>) isn’t updated in this chapter. The
+wallets described in this chapter work basically as they do in
+Bitcoin, but they send an email to Lisa instead of sending a
+transaction across the global Bitcoin network. We’ll get to that in
+the next chapter.</p>
+</div>
+<table id="tab0401" class="tableblock frame-all grid-all">
+<caption class="title">Table 1. Nothing new in the concept table</caption>
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Cookie Tokens</th>
+<th class="tableblock halign-left valign-top">Bitcoin</th>
+<th class="tableblock halign-left valign-top">Covered in</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 cookie token</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 bitcoin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ch02-hash-functions-and-signatures.html">[ch02]</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The spreadsheet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The blockchain</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ch06-the-blockchain.html">[ch06]</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Email to Lisa</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A transaction</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ch05-transactions.html">[ch05]</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A row in the spreadsheet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A transaction</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ch05-transactions.html">[ch05]</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lisa</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A miner</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ch07-proof-of-work.html">[ch07]</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Let’s have a release party! Cookie tokens 4.0, fresh from the lab!</p>
+</div>
+<table id="tab0402" class="tableblock frame-all grid-all widetable">
+<caption class="title">Table 2. Release notes, cookie tokens 4.0</caption>
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Version</th>
+<th class="tableblock halign-left valign-top">Feature</th>
+<th class="tableblock halign-left valign-top">How</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><span class="image gbnew"><img src="{commonimagedir}/new.png" alt="new"></span>4.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Easy to make payments and create new addresses</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mobile app “wallet”</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Simplified backups</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HD wallets are generated from a seed. Only the seed, 12 to 24 English
+words, needs to be backed up.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creating addresses in insecure environments</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HD wallets can generate public key trees without ever seeing any of
+the private keys.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">3.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Safe from expensive typing errors</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cookie token addresses</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Privacy improvements</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A PKH is stored in the spreadsheet instead of a personal name.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Secure payments</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Digital signatures solve the problem with imposters.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_exercises">Exercises</h3>
+<div class="sect3">
+<h4 id="_warm_up">Warm up</h4>
+<div class="sidebarblock">
+<div class="content">
+<div class="imageblock">
+<div class="content">
+<img src="images/ch04/u04-24.svg" alt="{big-width}">
+</div>
+</div>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Suppose you use a bitcoin wallet app and want to receive 50 BTC
+from your friend to your Bitcoin address
+<code>155gWNamPrwKwu5D6JZdaLVKvxbpoKsp5S</code>. Construct a payment URI to give to
+your friend. Hint: in Bitcoin, the URI starts with <code>bitcoin:</code> instead of
+<code>ct:</code>. Otherwise, they’re the same.</p>
+</li>
+<li>
+<p>How many coin flips does a random password of 10 characters
+correspond to? The password is selected from a 64-character alphabet.</p>
+</li>
+<li>
+<p>Name a few problems with password-protected backups. There are
+at least four.</p>
+</li>
+<li>
+<p>How is the seed created in an HD wallet?</p>
+</li>
+<li>
+<p>What does an xprv consist of?</p>
+</li>
+<li>
+<p>What does an xpub consist of?</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Exercises 4.7 and 4.8 assume that you read
+<a href="#hardened-key-derivation">Deriving hardened private keys</a>. If you skipped that section, you can
+skip these exercises, too.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="7">
+<li>
+<p>Suppose you want to make a hardened xprv with index <code>7</code> from
+<code>m/2/1</code>. What information do you need to create <code>m/2/1/7'</code>?</p>
+</li>
+<li>
+<p>Can you derive xpub <code>M/2/1/7'</code> from <code>M/2/1</code>? If not, how would
+you derive <code>M/2/1/7'</code>?</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_dig_in">Dig in</h4>
+<div class="olist arabic">
+<ol class="arabic" start="9">
+<li>
+<p>Suppose you’re a bad guy and have the master xpub of a clueless
+victim. You’ve also stolen the private key <code>m/4/1</code> that contains 1 BTC.
+Assume you also know this private key has this specific path. Describe
+how you’d go about calculating the master xprv. Use these hints:</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/ch04/u04-25.svg" alt="{full-width}">
+</div>
+</div>
+</li>
+<li>
+<p>Suppose instead that your clueless victim had 0 bitcoins on the
+private key <code>m/4/1</code>, but plenty of money on other addresses under the
+same xprv. Would you be able to steal any money?</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>If you didn’t read <a href="#hardened-key-derivation">Deriving hardened private keys</a>, you can skip exercise
+4.11.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="11">
+<li>
+<p>Suggest a better approach your victim could have used to prevent you
+from stealing all the money.</p>
+</li>
+</ol>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="imageblock">
+<div class="content">
+<img src="images/ch04/u04-26.svg" alt="u04 26">
+</div>
+</div>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="12">
+<li>
+<p>Say the cafe owner wants employees to have access to the counter
+sales account because they must be able to create a new address for
+each sale. But they must not have access to the private keys because
+the owner doesn’t trust the employees to handle them securely. Suggest
+how to achieve this. Hint: a wallet can import an xpub.</p>
+</li>
+<li>
+<p>Suppose you work at the cafe and have loaded an xpub into your
+wallet. Your colleague Anita has loaded the same xpub into her wallet.
+You can both request payments from customers that go into the same
+account. How would you notice when Anita has received money into a
+previously empty key? Hint: you can create keys ahead of time.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_summary">Summary</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>You usually use a mobile app, called a wallet, to send and receive
+money—cookie tokens or bitcoins.</p>
+</li>
+<li>
+<p>The wallet creates and stores keys, scans or shows payment details,
+sends payments, shows your balance, and backs up keys. You don’t have to
+do any of this manually.</p>
+</li>
+<li>
+<p>Backups are hard to do right. Password-protected backups suffer from
+problems with forgotten passwords, technology improvements, and humans
+being lousy random number generators.</p>
+</li>
+<li>
+<p>With HD wallets, you back up your random seed and store that seed in a
+safe place. Do it only once.</p>
+</li>
+<li>
+<p>The seed can be encoded using a mnemonic sentence, which makes it easier
+to write down the seed.</p>
+</li>
+<li>
+<p>HD wallets generate multiple private keys from a seed and organize them
+in a tree structure to improve privacy.</p>
+</li>
+<li>
+<p>The tree of public keys—or any of its branches—can be generated from an
+xpub. This is useful for insecure environments such as web servers.</p>
+</li>
+<li>
+<p>Hardened private key derivation keeps “accounts” compartmental­ized. It
+confines an attacker to a single account.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2020-01-26 11:15:39 +06
+</div>
+</div>
+</body>
+</html>
